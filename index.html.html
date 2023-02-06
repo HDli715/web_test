@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!-- 이벤트 연결 방법1 - on() 연결, off() 제거 -->
+<html lang="en">
+<head>
+    <title>Document Object model</title>
+    
+    <style>
+        #box {
+            background-color: gainsboro;
+        }
+    </style>
+
+
+    <script src="http://code.jquery.com/jquery-3.1.0.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#box').css({
+                width: 100,
+                height: 100,
+                background: 'gainsboro'
+            }).on('click', function () {
+                $(this).animate({
+                    width: '100%',
+                    height: 200,
+                    opacity: 0.8
+                }, 4000);
+                $('.page').fadeToggle('slow');
+            });
+        });
+    </script>
+        
+</head>
+<body>
+    <div id="box">
+        <div class="page">
+            <h1>Lorem ipsum dolor sit amet.</h1>
+            <p>Lorem ipsum dolor sitamet consectetur adipisicing dlit. Ducimus, Sequi!</p>
+        </div>
+    </div>
+</body>
+</html>
